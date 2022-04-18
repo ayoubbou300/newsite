@@ -6,6 +6,9 @@ use App\Http\Controllers\CreateController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\itemController;
 use App\Models\Item;
+use Illuminate\Http\Request;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +49,4 @@ Route::get('/arrayitems', function () {
     return view('arrayitems',['items'=>$items]);
 
 })->name('arrayitems');
+Route::DELETE('/deleteitems',[itemController::class,'destroy'])->name('deleteitems');

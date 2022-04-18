@@ -91,7 +91,9 @@ class itemController extends Controller
      */
     public function destroy($id)
     {
-        // $item->delete();
-        // return view('arrayitems',['item'=>$item]);
+        $item = Item::findOrFail($id)->delete();
+        
+        $items = Item::all();
+        return redirect()->route('deleteitems');
     }
 }
