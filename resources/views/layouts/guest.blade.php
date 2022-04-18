@@ -15,6 +15,42 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <style>
+            #bg {
+                background-image: url("../images/Rectangle 828.png");
+                height: 72px;
+                left: 13.11%;
+                right: 12.81%;
+                top: 471px;
+                
+                font-family: cursive;
+                
+                color: #142146;
+            
+                
+                
+           
+
+
+            }
+            .img{
+                
+                width: 204px;
+                height: 51.76px;
+                left: 86px;
+                top: 256px;
+                  
+                 
+                  
+                  
+                  
+                
+
+
+            }
+            
+           
+        </style>
     </head>
     <body>
         <div class="flex flex-row w-full">
@@ -22,9 +58,10 @@
             <div class="font-sans text-gray-900 antialiased flex-1">
                 {{ $slot }}
             </div>
-             <div class=" min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 flex-1">
-                <<img src="{{asset('images/Rectangle 828.png')}}" width="100" height="100" class="rounded-circle img-fluid" >
-            </div>
+            
+             <div id="bg" class=" min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 flex-1">
+                <img class="img object-top	" src="{{asset('images/Logo.png')}}"  />
+                <p style="margin: 10" class="font-light	text-base "> Hershel est aujourd’hui un site de renommé international. C’est aussi une boutique créée à l’aide de la plateforme shopify en 2009. Le site est surtout reconnu à cause de la qualité des produits qu’il fournit. Aucun détail n’est négligé sur le site et les services offerts sont de qualité.</p></div>
         </div>
     </body>
 </html>

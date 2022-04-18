@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CreateController;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\itemController;
+use App\Models\Item;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $items = Item::take(4)->get();
+
+    return view('welcome',['items'=>$items]);
 });
 
 Route::middleware([
@@ -23,6 +30,19 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+
+        $items = Item::take(4)->get();
+        // dd($items);
+
+
+
+        return view('dashboard',['items'=>$items]);
     })->name('dashboard');
 });
+Route::get('/additems',[itemController::class,'create'])->name('items');
+Route::Post('/additems',[itemController::class,'store'])->name('additems');
+Route::get('/arrayitems', function () {
+    $items = Item::all();
+    return view('arrayitems',['items'=>$items]);
+
+})->name('arrayitems');

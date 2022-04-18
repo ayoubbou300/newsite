@@ -34,7 +34,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main style="max-width: 1536px;margin-inline: auto">
                 {{ $slot }}
             </main>
         </div>
