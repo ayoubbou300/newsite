@@ -44,7 +44,7 @@ class itemController extends Controller
         ]);
 
         $items = Item::all();
-        return view('arrayitems',['item'=>$items]);
+        return view('arrayitems',['items'=>$items]);
 
     }
 
