@@ -68,7 +68,9 @@ class itemController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        $item = Item::find($id);
+        return view('edititems')->with('item',$item);
     }
 
     /**
@@ -80,8 +82,9 @@ class itemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        
+   }
+    
 
     /**
      * Remove the specified resource from storage.

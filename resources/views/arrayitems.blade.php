@@ -34,14 +34,13 @@
                                                     {{ $item->Type }}
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <form action="{{ route('deleteitems',[ 'item'=>$item->id]) }}" method="DELETE">
-                                                        @method('DELETE')
-                                                        @csrf 
+                                                    <form action="{{ route('deleteitems',[ 'item'=>$item->id]) }}" method="delete">
+                                                        {{csrf_field()}}
                                                         <x-jet-button type="submit" >Supprimer</x-jet-button>
                                                     </form>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <a href="{{ route('additems', $item) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                    <a href="{{ route('items.edit',[ 'item'=>$item->id]) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                                 </td>
                                                 
                                             </tr>

@@ -50,3 +50,5 @@ Route::get('/arrayitems', function () {
 
 })->name('arrayitems');
 Route::DELETE('/deleteitems',[itemController::class,'destroy'])->name('deleteitems');
+Route::get('/edititems',[itemController::class,'edit'])->name('items.edit');
+Route::post('/edititems',[itemController::class,'update'])->name('items.update');
