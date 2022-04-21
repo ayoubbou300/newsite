@@ -10,18 +10,6 @@
                 color: black
             }
             .connexion {
-            height: 38px;
-            width: 152px;
-            top: 118px;
-            border-radius: nullpx;
-            font-family: Montserrat;
-            font-size: 27px;
-            font-weight: 700;
-            line-height: 38px;
-            letter-spacing: 0em;
-            position: absolute;
-            left: 4.71%;
-            right: 84.09%;
             
             
 
@@ -29,10 +17,7 @@
             }
             .p{
                 
-                left: 8.47%;
-                right: 84.83%;
-                top: 32.88%;
-                bottom: 65.5%;
+                
 
                 font-family: 'Montserrat';
                 font-style: normal;
@@ -43,10 +28,8 @@
                 color: black;
 
                 opacity: 1.5; 
-                height: 30px;
-                width: 19px;
-                left: 130px;
-                top: 270px;
+                
+                
                 
           
                 }
@@ -55,7 +38,7 @@
     </style>
 </head>
 <x-guest-layout>
-    <div class="connexion">  Inscrivez-vous   </div>
+    <div class="" style="border-radius: nullpx; font-family: Montserrat; font-size: 27px; font-weight: 700; line-height: 38px;letter-spacing: 0em ;text-align: left; color: #1D2B56; padding-left: 5rem ;padding-top: 3rem">  Inscrivez-vous   </div>
     <x-jet-authentication-card>
         <x-slot name="logo">
             
@@ -124,14 +107,14 @@
             @endif
 
             <div  class="flex items-center justify-end mt-4">
-                <div style="position: absolute; bottom: 30% ;right: 70%" class="block mt-4">
+                <div style="" class="block mt-4">
                     <label for="remember_me" class="flex items-center">
                         <x-jet-checkbox id="remember_me" name="remember" />
                         <span class="ml-2 text-sm text-gray-600">{{ __('J’ai lu et j’accepte les conditions générales et les termes d’utilisation') }}</span>
                     </label>
                 </div>
                 
-                <a style="position: absolute; bottom: 20% ;right: 80% ;" class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <a style="" class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 

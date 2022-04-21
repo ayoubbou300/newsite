@@ -19,6 +19,9 @@
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Type
                                                 </th>
+                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Categorie
+                                                </th>
                                             </tr>
                                             </thead>
                                             <tbody class="bg-white divide-y divide-gray-200">
@@ -33,14 +36,18 @@
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                     {{ $item->Type }}
                                                 </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                    {{ $categories[$item->categorie_id]->categorie }}
+                                                </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <form action="{{ route('deleteitems',[ 'item'=>$item->id]) }}" method="delete">
-                                                        {{csrf_field()}}
+                                                    <form action="{{ route('deleteitems',[ 'id'=>$item->id]) }}" method="POST">
+                                                        @csrf
+                                                        @method('delete')
                                                         <x-jet-button type="submit" >Supprimer</x-jet-button>
                                                     </form>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <a href="{{ route('items.edit',[ 'item'=>$item->id]) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                    <a href="{{ route('edititem', ['id' => $item->id]) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                                 </td>
                                                 
                                             </tr>

@@ -18,10 +18,7 @@
         <style>
             #bg {
                 background-image: url("../images/Rectangle 828.png");
-                height: 72px;
-                left: 13.11%;
-                right: 12.81%;
-                top: 471px;
+                
                 
                 font-family: cursive;
                 

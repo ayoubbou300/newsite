@@ -5,12 +5,7 @@
             height: 38px;
             width: 152px;
             top: 118px;
-            border-radius: nullpx;
-            font-family: Montserrat;
-            font-size: 27px;
-            font-weight: 700;
-            line-height: 38px;
-            letter-spacing: 0em;
+            
             position: absolute;
             left: 4.71%;
             right: 84.09%;
@@ -43,7 +38,7 @@
     </style>
 </head>
 <x-guest-layout>
-    <div class="connexion">Connexion</div>
+    <div class="" style="border-radius: nullpx; font-family: Montserrat; font-size: 27px; font-weight: 700; line-height: 38px;letter-spacing: 0em ;text-align: left; color: #1D2B56; padding-left: 5rem ;padding-top: 3rem">Connexion</div>
     <x-jet-authentication-card 	>
         <x-slot name="logo">
             
@@ -108,7 +103,7 @@
             </div>
             <div>
                 
-                <a style="position: absolute; bottom: 30% ;font-family: 'Montserrat'; font-style: normal; font-weight: 500; font-size: 12px; line-height: 15px; color: #FE9A00;" class="flex underline text-sm text-gray-600 hover:text-gray-900" href="{{url('/register')}}">
+                <a style="font-family: 'Montserrat'; font-style: normal; font-weight: 500; font-size: 12px; line-height: 15px; color: #FE9A00;" class="flex underline text-sm text-gray-600 hover:text-gray-900" href="{{url('/register')}}">
                     <p style="color: black">Pas encore inscrit? </p>{{ __(" S'inscrire gratuitement.") }}
                 </a>
             

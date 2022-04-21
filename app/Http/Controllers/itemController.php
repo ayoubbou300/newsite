@@ -40,7 +40,8 @@ class itemController extends Controller
             'Nom'=>$request->nom,
             'Description'=>$request->description,
             'Type'=>$request->Type,
-            'user_id'=>auth()->user()->id
+            'user_id'=>auth()->user()->id,
+            'categorie_id'=>$request->categorie_id
         ]);
 
         $items = Item::all();
@@ -71,6 +72,7 @@ class itemController extends Controller
        
         $item = Item::find($id);
         return view('edititems')->with('item',$item);
+        
     }
 
     /**
@@ -80,10 +82,17 @@ class itemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        
-   }
+        $item = Item::findOrFail($request->id);
+        $item->update([
+            'Nom'=> $request->nom,
+            'Description'=>$request->description,
+            'Type'=>$request->Type,
+            'categorie_id'=>$request->categorie_id
+        ]);
+       return view('edititems',['item'=>$item]);
+    }
     
 
     /**
@@ -97,6 +106,25 @@ class itemController extends Controller
         $item = Item::findOrFail($id)->delete();
         
         $items = Item::all();
-        return redirect()->route('deleteitems');
+        return view('arrayitems',['items'=>$items]);
+    }
+    public function search(request $request){
+        
+        $search = (new Item)->newQuery();
+         if($request->has('Nom')){
+            $request->where('Nom',$request->input('Nom'));
+         }
+         if($request->has('Description')){
+            $request->where('Description',$request->input('Nom'));
+         }
+         if($request->has('Type')){
+            $request->where('Type',$request->input('Type'));
+         }
+         if($request->has('categorie')){
+            $request->where('categorie',$request->input('categorie_id'));
+         }
+        // $research = Item::where('Nom','Like'," %$search% ")->orWhere('Type','Like',"%$search%")->get();
+         return $search->get(); 
+    
     }
 }

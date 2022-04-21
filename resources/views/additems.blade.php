@@ -15,18 +15,27 @@
                             <form action="additems" method="post" >
                                 @csrf
                                 <div class="elem-group">
-                                <label class="block mt-1 w-full   rounded-lg" for="name">Nom</label>
+                                <label class="block mt-1 w-full   rounded-lg" for="name" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas">Nom</label>
                                 <input class="block mt-1 w-full   rounded-lg" type="text" name="nom" name="visitor_name" placeholder="" pattern=[A-Z\sa-z]{3,20} required>
                                 </div>
                                 <div class="elem-group">
-                                <label class="block mt-1 w-full   rounded-lg" for="">Description</label>
+                                <label class="block mt-1 w-full   rounded-lg" for="" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas">Description</label>
                                 <input class="block mt-1 w-full   rounded-lg" type="text" name="description" name="visitor_email" placeholder="" required>
                                 </div>
                                 <div class="elem-group">
-                                    <label class="block mt-1 w-full   rounded-lg" for="" name="type">Type</label>
-                                    <select name="Type" id="Type">
+                                    <label class="block mt-1 w-full   rounded-lg" for="" name="type" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas">Type</label>
+                                    <select  id="Type" name="Type">
                                         <option value="Service">Service</option>
                                         <option value="Produit">Produit</option>
+                                    </select>
+                                </div>
+                                <div class="elem-group">
+                                    <label class="block mt-1 w-full   rounded-lg" for="" name="categorie" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas">Categorie</label>
+                                    <select name="categorie_id" id="categorie">
+                                        <option value=1>électricité</option>
+                                        <option value=2>Electronic</option>
+                                        <option value=3>Réparation</option>
+                                        <option value=4>Marketing</option>
                                     </select>
                                 </div>
                                 
