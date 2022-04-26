@@ -38,9 +38,6 @@
                                         <option value=4>Marketing</option>
                                     </select>
                                 </div>
-                                
-                                
-                                
                                 <button class="block w-full mt-4    content-center 	border-amber-600 "  type="submit">Enregistrer</button>
                             </form>
                         </div>

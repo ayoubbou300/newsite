@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class itemController extends Controller
 {
@@ -110,21 +111,48 @@ class itemController extends Controller
     }
     public function search(request $request){
         
-        $search = (new Item)->newQuery();
-         if($request->has('Nom')){
-            $request->where('Nom',$request->input('Nom'));
-         }
-         if($request->has('Description')){
-            $request->where('Description',$request->input('Nom'));
-         }
-         if($request->has('Type')){
-            $request->where('Type',$request->input('Type'));
-         }
-         if($request->has('categorie')){
-            $request->where('categorie',$request->input('categorie_id'));
-         }
-        // $research = Item::where('Nom','Like'," %$search% ")->orWhere('Type','Like',"%$search%")->get();
-         return $search->get(); 
+        $search = $request['search']?? "" ;
+        if ($search != "") {
+            $items = Item::where('Nom','=',"%".$search."%")->get();
+        }else {
+            
+        }
+        
+        $item = compact('items');
+        return view('search',['items'=>$items]);
+        
+        
+        
+        // $search = request()->query('search');
+        // if ($search) {
+        //     $items = Item::where('Nom','Like'," %.$search.% ");
+        // }else {
+        //     $items = Item::simplePaginate(2);
+        // }
+        // return view('search',['items'=>$items]);
+        
+        // $search = (new Item)->newQuery();
+        //  if($request->has('Nom')){
+        //     $request->where('Nom',$request->input('Nom'));
+        //  }
+        //  if($request->has('Description')){
+        //     $request->where('Description',$request->input('Nom'));
+        //  }
+        //  if($request->has('Type')){
+        //     $request->where('Type',$request->input('Type'));
+        //  }
+        //  if($request->has('categorie')){
+        //     $request->where('categorie',$request->input('categorie_id'));
+        //  }
+        //  $research = Item::where('Nom','Like'," %$search% ")->orWhere('Type','Like',"%$search%")->get();
+        //  return $search->get(); 
+        // $search = Item::get('Nom');
+        // $search = Item::where('Nom','like','%'.$search.'%');
+        
+        
+        // $search = Input::get('search');
+        // $items = Item::where('title','like','%'.$search.'%');
+        // return view('search',['items' => $items]);
     
     }
 }

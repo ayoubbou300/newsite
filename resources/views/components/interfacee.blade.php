@@ -11,9 +11,9 @@
             </div>
         </div>
         <div style="display: flex; margin: auto; border: 3px solid green; padding: 10px; width: 1432px; left: 104px; top: 720px; background: #FFFFFF; border: 1px solid #F7F9FC; box-sizing: border-box; box-shadow: 4px 4px 4px ring-blue-50, 8px 16px 40px ring-blue-50; border-radius: 8px;">
-            <form action="{{route('searchitem')}}" style="display: flex ;margin: auto; border: 3px;width: 1432px;">
+            <form action="{{route('searchitem')}}" style="display: flex ;margin: auto; border: 3px;width: 1432px; " method="GET">
                 <img src="{{asset('images/search.png')}}" style="margin: auto" >
-                <input name="Nom" style=" border-style: none;padding-left: 6rem; padding-right: 6rem; opacity: 0.5;margin: auto ;box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color); " type="text" placeholder="Terme de recherche (entreprise, produit…)">
+                <input  name="search" style=" border-style: none;padding-left: 6rem; padding-right: 6rem; opacity: 0.5;margin: auto ;box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color); " type="text" placeholder="Terme de recherche (entreprise, produit…)">
                 <img src="{{asset('images/Line.png')}}" style="margin: auto" >
                 <select  name="categorie_id" id="categorie" style="border-style: none; margin: auto ;opacity: 0.5;padding-left: 4rem; padding-right: 4rem; box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);"  >
                     <option value=1>électricité</option>
@@ -118,23 +118,23 @@
 
                         </div>
                     </div>
-                    <div style=" display: flex ">
-                        <div style="margin: auto  ">
+                    <div style=" display: flex ;flex-direction:row  ">
+                        <div style="margin: auto ;  ">
                             <h2 style="margin-bottom : 20px; font-family: 'Montserrat', sans-serif; font-style: normal;  font-weight: 500; font-size: 20px; line-height: 16px; color: #1D2B56;">A propos</h2>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Conditions d'utilisation</p>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Politique de confidentialité</p>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Démarrer mon entreprise</p>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Espace investisseurs</p>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Contact</p>
+                            <a href="Conditions d'utilisation" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Conditions d'utilisation</a>
+                            <a href="Politique de confidentialité" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Politique de confidentialité</a>
+                            <a href="Démarrer mon entreprise" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Démarrer mon entreprise</a>
+                            <a href="Espace investisseurs" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Espace investisseurs</a>
+                            <a href="Contact" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Contact</a>
                         </div>
-                        <div style="margin: auto">
+                        <div style="margin: auto ; ">
                             <h2 style=" margin-bottom: 20px;font-family: 'Montserrat', sans-serif; font-style: normal;  font-weight: 500; font-size: 20px; line-height: 16px; color: #1D2B56;">Annuaire des entreprises</h2>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Formations</p>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Événements </p>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Offres d'emploi</p>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Fournisseurs</p>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Prestataires de service</p>
-                            <p style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Réseau social</p>
+                            <a href="Formations" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Formations</a>
+                            <a href="Événements" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Événements </a>
+                            <a href="Offres d'emploi" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Offres d'emploi</a>
+                            <a href="Fournisseurs" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Fournisseurs</a>
+                            <a href="Prestataires de service" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Prestataires de service</a>
+                            <a href="Réseau social" style="font-family: 'Montserrat', sans-serif; font-style: normal;font-weight: 400; font-size: 12px; line-height: 24px; color: #A5AABB;">Réseau social</a>
                         </div>
                     </div>
                     <div>
