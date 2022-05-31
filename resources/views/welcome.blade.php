@@ -1,9 +1,9 @@
 <x-app-layout>
    
    <x-interfacee :items="$items" :produits="$produits" :services="$services" />
-</x-app-layout>
+</x-app-layout> --}}
 
-{{--<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -66,7 +66,7 @@
 
 
       </div>
-        {{-- <div class="absolute  min-h-screen  bg-gray-100 dark:bg-gray-900  py-4 sm:pt-0"> 
+        <div class="absolute  min-h-screen  bg-gray-100 dark:bg-gray-900  py-4 sm:pt-0"> 
             <div class=" relative ">
                 <div  class="" style="position: absolute; top: 0; right: 0; width: 98%; padding: 2rem;">
                     <img src="{{asset('images/Logo_orange.png')}}" >
@@ -98,4 +98,4 @@
         </div>
     </body>
 
-</html>--}}
+</html> --}}

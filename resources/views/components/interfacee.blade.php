@@ -11,7 +11,8 @@
             </div>
         </div>
         <div style="display: flex; margin: auto; border: 3px solid green; padding: 10px; width: 1432px; left: 104px; top: 720px; background: #FFFFFF; border: 1px solid #F7F9FC; box-sizing: border-box; box-shadow: 4px 4px 4px ring-blue-50, 8px 16px 40px ring-blue-50; border-radius: 8px;">
-            <form action="{{route('searchitem')}}" style="display: flex ;margin: auto; border: 3px;width: 1432px; " method="GET">
+            <form action="{{route('searchitem')}}" style="display: flex ;margin: auto; border: 3px;width: 1432px; " method="POST">
+                @csrf
                 <img src="{{asset('images/search.png')}}" style="margin: auto" >
                 <input  name="search" style=" border-style: none;padding-left: 6rem; padding-right: 6rem; opacity: 0.5;margin: auto ;box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color); " type="text" placeholder="Terme de recherche (entreprise, produit…)">
                 <img src="{{asset('images/Line.png')}}" style="margin: auto" >

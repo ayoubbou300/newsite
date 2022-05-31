@@ -15,7 +15,13 @@ class itemController extends Controller
      */
     public function index()
     {
-        
+        $items = Item::take(4)->get();
+    
+    
+    $produits = Item::where('Type','Produit')->take(4)->get();
+    $services = Item::where('Type','Service')->take(4)->get();
+
+    return view('dashboard',['items'=>$items,'produits'=>$produits,'services'=>$services]);
     }
 
     /**
@@ -111,15 +117,15 @@ class itemController extends Controller
     }
     public function search(request $request){
         
-        $search = $request['search']?? "" ;
-        if ($search != "") {
-            $items = Item::where('Nom','=',"%".$search."%")->get();
-        }else {
-            
-        }
         
-        $item = compact('items');
+        if ($request ->isMethod('post') ) {
+            $search = $request->get('search');
+            $items = Item::where('Nom','LIKE','%'.$search.'%')->paginate(4);
+
+        }
         return view('search',['items'=>$items]);
+        
+    
         
         
         

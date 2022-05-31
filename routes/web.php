@@ -11,16 +11,7 @@ use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 Route::get('/', function () {
     $items = Item::take(4)->get();
@@ -50,4 +41,4 @@ Route::get('/arrayitems', function () {
 Route::DELETE('/deleteitem/{id}',[itemController::class,'destroy'])->name('deleteitems');
 Route::get('/edititem/{id}',[itemController::class,'edit'])->name('edititem');
 Route::put('/edititem/{id}',[itemController::class,'update'])->name('updateitem');
-route::get('/search',[itemController::class,'search'])->name('searchitem');
+route::post('/search',[itemController::class,'search'])->name('searchitem');
